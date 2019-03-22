@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     struct dirent *ent;
     size_t size = 10;
     char *user_input = (char *)malloc(size);
-    
+
     scanf("%[^\n]s", user_input);
 
 //    //Attempted to Reallocate char size dynamically based
@@ -39,6 +39,11 @@ int main(int argc, char **argv)
         const char *entry = ent->d_name;
         struct stat buf;
         stat(entry, &buf);
+//        if(S_ISDIR(buf.st_mode)){
+//            printf("<DIR> %s \n", entry);
+//        } else if(S_ISREG(buf.st_mode)) {
+//            printf("%lld %s\n", buf.st_size, entry);
+//        }
         printf("%10lld %s\n", buf.st_size, entry);
     }
 
