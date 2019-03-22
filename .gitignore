@@ -1,1 +1,5 @@
 .idea
+cmake-build-debug
+examples/commandline
+examples/testdir
+lsls/lsls
